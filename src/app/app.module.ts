@@ -9,6 +9,10 @@ import { CaptureComponent } from './components/capture.component';
 import {CameraService} from './camera.service';
 import { LoginComponent } from './components/login.component';
 
+//
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'; 
+
 const ROUTES: Routes = [
 	{ path: '', component: LoginComponent },
 	{ path: 'main', component: MainComponent },
@@ -24,7 +28,10 @@ const ROUTES: Routes = [
   imports: [
 		BrowserModule, 
 		RouterModule.forRoot(ROUTES),
-		WebcamModule,
+    WebcamModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ CameraService ],
   bootstrap: [AppComponent]
